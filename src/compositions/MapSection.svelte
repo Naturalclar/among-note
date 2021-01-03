@@ -3,8 +3,16 @@
   import MapImage from "../components/MapImage.svelte";
   import Margin from "../components/Margin.svelte";
   import Section from "../components/Section.svelte";
+  import PlayerMarker from "../components/PlayerMarker.svelte";
+import { players, getSelected } from "../stores/players";
 
   let selectedMap: MapName = "skeld";
+
+  let selectedPlayer: PlayerColor[] = [];
+
+  players.subscribe((value) => {
+    selectedPlayer = getSelected(value);
+  });
 
   const handleSelect = (event: MapSelectEvent) => {
     selectedMap = event.detail.map;
@@ -17,17 +25,8 @@
     flex-wrap: wrap;
     gap: 5px;
   }
-  .mapContainer {
-    position: relative;
-    height: 400px;
-  }
-  .image {
-    position: absolute;
-    z-index: 1;
-  }
   .svgContainer {
     width: "100%";
-    z-index: 2;
   }
 </style>
 
@@ -48,15 +47,17 @@
         on:click={handleSelect} />
     </div>
     <Margin size={24} />
-    <div class="mapContainer">
-      <div class="image">
-        <MapImage map={selectedMap} />
-      </div>
-      <div class="svgContainer">
-        <svg width="100%" viewBox="0 0 400 560" >
-          <image href="/images/players/Red.png" height="40" width="40" />
-        </svg>
-      </div>
-    </div>
+
+    <svg viewBox="0 0 560 400">
+      <MapImage map={selectedMap} />
+            {#each selectedPlayer as color}
+        {#key color}
+          <PlayerMarker color={color} />
+        {/key}
+      {/each}
+
+      
+    </svg>
+
   </div>
 </Section>
