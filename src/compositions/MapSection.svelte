@@ -48,7 +48,7 @@
     </div>
     <Margin size={24} />
 
-    <svg viewBox="0 0 560 400" />
+    <svg viewBox="0 0 560 400" >
       <MapImage map={selectedMap} />
       {#each selectedPlayer as color}
         {#key color}

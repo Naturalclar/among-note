@@ -1,5 +1,5 @@
 {
-  "name": "svelte-app",
+  "name": "among-note",
   "version": "1.0.0",
   "scripts": {
     "build": "rollup -c",
@@ -7,7 +7,8 @@
     "start": "sirv public",
     "storybook": "start-storybook -p 6006 -s public",
     "build-storybook": "build-storybook",
-    "validate": "svelte-check"
+    "validate": "svelte-check",
+    "deploy": "vercel deploy"
   },
   "devDependencies": {
     "@babel/core": "^7.12.10",
@@ -30,7 +31,8 @@
     "svelte-loader": "^2.13.6",
     "svelte-preprocess": "^4.0.0",
     "tslib": "^2.0.0",
-    "typescript": "^4.1.3"
+    "typescript": "^4.1.3",
+    "vercel": "^21.0.1"
   },
   "dependencies": {
     "sirv-cli": "^1.0.0"
