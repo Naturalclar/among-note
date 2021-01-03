@@ -25,9 +25,7 @@
     flex-wrap: wrap;
     gap: 5px;
   }
-  svg {
-    pointer-events: none;
-  }
+
 </style>
 
 <Section label="Map">

@@ -27,6 +27,12 @@
   };
 </script>
 
+<style>
+  g {
+    cursor: pointer;
+  }
+</style>
+
 <g
   on:mousedown={handleMouseDown}
   on:mouseup={handleMouseUp}
