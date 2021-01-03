@@ -4,7 +4,7 @@
   import Margin from "../components/Margin.svelte";
   import Section from "../components/Section.svelte";
   import PlayerMarker from "../components/PlayerMarker.svelte";
-import { players, getSelected } from "../stores/players";
+  import { players, getSelected } from "../stores/players";
 
   let selectedMap: MapName = "skeld";
 
@@ -25,8 +25,8 @@ import { players, getSelected } from "../stores/players";
     flex-wrap: wrap;
     gap: 5px;
   }
-  .svgContainer {
-    width: "100%";
+  svg {
+    pointer-events: none;
   }
 </style>
 
@@ -48,16 +48,13 @@ import { players, getSelected } from "../stores/players";
     </div>
     <Margin size={24} />
 
-    <svg viewBox="0 0 560 400">
+    <svg viewBox="0 0 560 400" />
       <MapImage map={selectedMap} />
-            {#each selectedPlayer as color}
+      {#each selectedPlayer as color}
         {#key color}
-          <PlayerMarker color={color} />
+          <PlayerMarker {color} />
         {/key}
       {/each}
-
-      
     </svg>
-
   </div>
 </Section>
