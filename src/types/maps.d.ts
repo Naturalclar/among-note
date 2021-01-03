@@ -1,0 +1,1 @@
+type MapName = "skeld" | "mirahq" | "polus"
