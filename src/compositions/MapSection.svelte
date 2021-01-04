@@ -25,6 +25,9 @@
     flex-wrap: wrap;
     gap: 5px;
   }
+  svg {
+    touch-action: none;
+  }
 
 </style>
 
