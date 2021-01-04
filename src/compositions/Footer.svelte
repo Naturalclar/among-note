@@ -9,5 +9,5 @@
   Made with ❤️ by
   <a href="https://twitter.com/natural_clar">@Naturalclar</a>
   -
-  <a href="https://github.com/Naturalclar">Github</a>
+  <a href="https://github.com/Naturalclar/among-note">Github</a>
 </footer>
